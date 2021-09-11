@@ -17,11 +17,12 @@ export const request = async (method, url, data) => {
   })
 }
 
-export const login = async (accessToken) => {
+export const login = async (user) => {
   try {
-    const response = await (await request('POST', 'users/login', {
-      accessToken
-    })).json()
+    // const response = await (await request('POST', 'users/login', {
+    //   accessToken
+    // })).json()
+    const response = await (await request('POST', 'users/login-oa', user)).json()
     if (response.data.jwt) {
       await saveToken(response.data.jwt)
       return true
