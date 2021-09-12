@@ -1,7 +1,7 @@
 {
-  "cwd": "D:/IT/Projects/Webs/coffee-shop-tutorial",
+  "cwd": "D:/IT/Projects/Webs/coffee-shop-tutorial/zalo-mini-client",
   "newProject": true,
-  "name": "Coffee Shop",
+  "name": "Coop Online",
   "framework": "react",
   "template": "single-view",
   "cssPreProcessor": "scss",
