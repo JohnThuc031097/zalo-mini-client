@@ -17,12 +17,34 @@ export const request = async (method, url, data) => {
   })
 }
 
-export const login = async (user) => {
+export const login = async (accessToken) => {
   try {
-    // const response = await (await request('POST', 'users/login', {
-    //   accessToken
-    // })).json()
-    const response = await (await request('POST', 'users/login-oa', user)).json()
+    const response = await (await request('POST', 'users/login', {
+      accessToken
+    })).json()
+    if (response.data.jwt) {
+      await saveToken(response.data.jwt)
+      return true
+    } else {
+      return false
+    }
+  } catch (error) {
+    console.log('Error logging in. Details: ', error)
+    return false
+  }
+}
+
+export const loginOA = async (user) => {
+  try {
+    let code = '';
+    if (user) {
+      if (Date.now() < user.zaloOAExpires) {
+        code = user.zaloOACode;
+      }
+    }
+    const response = await (await request('POST', 'users/login-oa', {
+      code
+    })).json()
     if (response.data.jwt) {
       await saveToken(response.data.jwt)
       return true

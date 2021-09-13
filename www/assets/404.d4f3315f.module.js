@@ -1,0 +1,1 @@
+import{R as e,y as t,B as n,D as a,f as l}from"./vendor.5ab41175.module.js";import o from"./navbar-back.591b5c6f.module.js";const r=()=>e.createElement(t,null,e.createElement(o,{title:"Not found"}),e.createElement(n,{mt:2},e.createElement(a,{inset:!0},e.createElement(l,null,"Sorry"),e.createElement("p",null,"Requested content not found."))));export{r as default};
