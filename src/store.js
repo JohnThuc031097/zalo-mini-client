@@ -279,19 +279,6 @@ const store = createStore({
           dispatch('setUser', user)
         }
       }
-    },
-    async loginOA({ dispatch }) {
-      const cachedUser = await loadUserFromCache()
-      if (cachedUser) {
-        dispatch('setUser', cachedUser)
-      }
-      const success = await loginOA(cachedUser);
-      if (success) {
-        const user = await getCurrentUser()
-        if (user) {
-          dispatch('setUser', user)
-        }
-      }
     }
   },
 })

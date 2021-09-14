@@ -10,7 +10,6 @@ export const getAccessToken = () => new Promise(resolve => {
       api.getAccessToken({
         success: (token) => {
           if (token === 'DEFAULT ACCESS TOKEN' && config.DEFAULT_ACCESS_TOKEN) {
-            // if (token === 'DEFAULT ZOAUTH' && config.DEFAULT_ACCESS_TOKEN) {
             // eslint-disable-next-line no-param-reassign
             token = config.DEFAULT_ACCESS_TOKEN // For testing purpose only
           }

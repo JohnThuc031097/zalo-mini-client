@@ -11,7 +11,7 @@ const MyApp = () => {
 
   // ZMP Parameters
   const zmpparams = {
-    name: 'Coffee Shop', // App name
+    name: 'Coop Online', // App name
     theme: 'auto', // Automatic theme detection
     // App store
     store: store,
@@ -20,7 +20,6 @@ const MyApp = () => {
   zmpready(() => {
     // Call ZMP APIs here
     store.dispatch('login')
-    // store.dispatch('loginOA');
   })
 
   return (

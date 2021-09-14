@@ -34,29 +34,6 @@ export const login = async (accessToken) => {
   }
 }
 
-export const loginOA = async (user) => {
-  try {
-    let code = '';
-    if (user) {
-      if (Date.now() < user.zaloOAExpires) {
-        code = user.zaloOACode;
-      }
-    }
-    const response = await (await request('POST', 'users/login-oa', {
-      code
-    })).json()
-    if (response.data.jwt) {
-      await saveToken(response.data.jwt)
-      return true
-    } else {
-      return false
-    }
-  } catch (error) {
-    console.log('Error logging in. Details: ', error)
-    return false
-  }
-}
-
 export const getCurrentUser = async () => {
   try {
     const response = await (await request('GET', 'users/logged-in')).json()
