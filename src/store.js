@@ -1,7 +1,7 @@
 
 import { createStore } from 'zmp-core/lite'
 import { zmp } from 'zmp-framework/react'
-import { checkout, getCurrentUser, getPlacedOrders, getProductsByCategory, login, loginOA } from './services/coffee'
+import { checkout, getCurrentUser, getPlacedOrders, getProductsByCategory, login } from './services/coffee'
 import { loadAddresses, loadProductsFromCache, loadUserFromCache, saveProductsToCache, saveUserToCache } from './services/storage'
 import { follow, getAccessToken } from './services/zalo'
 
